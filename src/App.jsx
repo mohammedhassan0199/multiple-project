@@ -5,6 +5,7 @@ import Greeting from './pages/Greeting';
 import Calculator from './pages/Calculator';
 import ToDoList from './pages/ToDoList';
 import DictionaryApp from './pages/DictionaryApp';
+import Toggle from './Toggle';
 
 
 
@@ -28,13 +29,14 @@ function App() {
   return (
     <BrowserRouter>
 
-      <nav className='py-6 px-12 bg-[#581845] text-white'>
+      <nav className='py-6 px-12 bg-[#581845]  text-white'>
         <ul className='flex justify-between text-2xl'>
           <li><Link to="/">Digital Clock</Link></li>
           <li><Link to="/greeting">Greeting App</Link></li>
           <li><Link to="/calculator">Calculator</Link></li>
           <li><Link to="/todolist">Todo List</Link></li>
           <li><Link to="/dictionary">Dictionary</Link></li>
+          <li><Link to="toggle">Toggle</Link></li>
           
           <div className='icon' onClick={changeMode}>{background == "light-mode" ? <i className='fa-solid fa-sun'></i> : <i className='fa-solid fa-moon'></i>}</div>
 
@@ -49,6 +51,10 @@ function App() {
   <Route path="/calculator" element={<Calculator />} />
   <Route path="/todolist" element={<ToDoList />} />
   <Route path="/dictionary" element={<DictionaryApp />} />
+  <Route path='/toggle' element={<Toggle/>}/>
+
+
+
 </Routes>
     </BrowserRouter>
   );
